@@ -32,9 +32,11 @@ const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
       if (!errors) {
         setResult(data?.body || "No data returned");
       } else {
-        setError("Failed to generate recipe. Please try again.");
+        console.error("GraphQL errors:", errors);
+        setError(`Failed to generate recipe: ${JSON.stringify(errors)}`);
       }
     } catch (e) {
+      console.error("Exception:", e);
       setError(`An error occurred: ${e}`);
     } finally {
       setLoading(false);
