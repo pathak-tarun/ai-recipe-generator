@@ -4,7 +4,7 @@ export function request(ctx) {
     const prompt = `Suggest a recipe idea using these ingredients: ${ingredients.join(", ")}.`;
   
     return {
-      resourcePath: `/model/us.anthropic.claude-3-5-sonnet-20241022-v2:0/invoke`,
+      resourcePath: `/model/anthropic.claude-3-haiku-20240307-v1:0/invoke`,
       method: "POST",
       params: {
         headers: {
